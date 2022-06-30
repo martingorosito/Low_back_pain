@@ -235,7 +235,7 @@ plt.xticks([1,2,3,4,5,6],['ab_precision', 'n_precision', 'ab_recall', 'n_recall'
 
 # In[84]:
 
-
+MLP_explainer = shap.KernelExplainer(MLP_model, x_train)
 shap_values = MLP_explainer.shap_values(x_test_scaled)
 target_names = ['Abnormal', 'Normal']
 shap.summary_plot(shap_values, x_test,class_names = target_names)
